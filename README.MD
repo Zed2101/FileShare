@@ -12,7 +12,6 @@ This project allows a user, acting as a server, to let other users download `.zi
 
 ## Requirements
 - [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
 - Optionally, use [Localtunnel](https://localtunnel.github.io/www/) or [ngrok](https://ngrok.com/) for serving over HTTPS (recommended for full functionality).
 
 ## Installation
@@ -39,7 +38,7 @@ This project allows a user, acting as a server, to let other users download `.zi
 │   ├── files/          		# Folder where the .zip files to share are placed
 │   ├── index.html/     
 │   ├── index.css/
-|	└── script.js/
+|	 └── script.js/
 ├── download-server.bat 		# Run the server using nodejs
 ├── install-dependencies.bat 	# Run to install the dependencies
 └── server.js					# Express.js server scrip
