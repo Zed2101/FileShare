@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family:'Courier New', Courier, monospace;
+}
+
+html, body {
+  min-height: 100%;
+  background-color: rgb(6, 8, 15);
+}
+
+body {
+  padding: 4rem;
+}
+
+.title {
+  color: white;
+  font-weight: 800;
+  font-size: 48px;
+}
+
+.game-container {
+  color: white;
+  background-color: rgb(17, 22, 41);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-top: .5rem;
+}
+
+.game-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.game-container .header .size {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.game-container .dl-txt {
+  margin-top: 1rem;
+}
+
+.game-container .code {
+  padding: 1rem;
+  background-color: black;
+  margin-top: .25rem;
+  border-radius: .5rem;
+  transition: 100ms;
+  font-family: "Source Code Pro", monospace;
+}
+
+.game-container .code p {
+  pointer-events: none;
+}
+
+.game-container .code:hover {
+  background-color: rgb(10, 10, 10);
+  cursor: pointer;
+}
