@@ -1,6 +1,5 @@
-Here's a basic `README.md` file for your project:
 
-```markdown
+
 # Zip File Sharing Server
 
 This project allows a user, acting as a server, to let other users download `.zip` files stored in the `src/files/` folder. The main purpose of this app is to make sharing large files easier.
@@ -12,8 +11,8 @@ This project allows a user, acting as a server, to let other users download `.zi
 - **Web Interface**: Displays available files with a copy-to-clipboard PowerShell command for easy download.
 
 ## Requirements
-- Node.js
-- Express.js
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
 - Optionally, use [Localtunnel](https://localtunnel.github.io/www/) or [ngrok](https://ngrok.com/) for serving over HTTPS (recommended for full functionality).
 
 ## Installation
@@ -35,12 +34,22 @@ This project allows a user, acting as a server, to let other users download `.zi
    ```
 
 ## Folder Structure
-- `src/`: Contains the web page files (`html`, `css`, `js`) used to display the list of `.zip` files.
-- `src/files/`: This is where the user places the `.zip` files they want to share.
+```bash
+├── src/
+│   ├── files/          		# Folder where the .zip files to share are placed
+│   ├── index.html/     
+│   ├── index.css/
+|	└── script.js/
+├── download-server.bat 		# Run the server using nodejs
+├── install-dependencies.bat 	# Run to install the dependencies
+└── server.js					# Express.js server scrip
+
+```
+- **src/files/**: This is where you place the `.zip` files that will be shared.
 
 ## Usage
 1. Place the `.zip` files you want to share inside the `src/files/` folder.
-2. Start the server as described in the installation steps.
+2. Start the server as described in the installation steps or run the download-server.bat.
 3. Open the webpage in a browser (e.g., `http://localhost:3000`).
 4. You will see the available `.zip` files listed, along with a PowerShell command to download each file.
 5. **Important**: For the "click-to-copy" feature to work, serve the app over HTTPS using services like Localtunnel or ngrok.
@@ -54,15 +63,12 @@ This project allows a user, acting as a server, to let other users download `.zi
 ## Example PowerShell Command
 The command provided on the webpage will look something like this:
 ```powershell
-Invoke-WebRequest -Uri "http://your-server.com/files/yourfile.zip" -OutFile "yourfile.zip"; Expand-Archive -Path "yourfile.zip" -DestinationPath "."; Remove-Item "yourfile.zip"
+Invoke-WebRequest -Uri 'http://ip:port/download?file=file-name.zip' -OutFile (Join-Path $(Get-Location) 'file-name.zip'); Expand-Archive -Path (Join-Path $(Get-Location) 'file-name.zip') -DestinationPath $(Get-Location) -Force; Remove-Item -Path (Join-Path $(Get-Location) 'file-name.zip') -Force;"
 ```
 
 ## Recommendations
-- For full functionality, especially for the click-to-copy feature, use HTTPS. Services like Localtunnel or ngrok are easy solutions for this.
+- For full functionality, especially for the click-to-copy feature, use HTTPS. Services like [Localtunnel](https://localtunnel.github.io/www/) or [ngrok](https://ngrok.com/) are easy solutions for this.
 - Keep the `src/files/` folder organized for better management of the files being shared.
 
 ## License
-This project is licensed under the MIT License.
-```
-
-This readme outlines the setup process, folder structure, usage instructions, and additional recommendations for making the project easier to understand and use.
+This project is licensed under the MIT License. See the [LICENSE](https://opensource.org/license/mit) file for details.
