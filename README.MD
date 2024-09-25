@@ -36,9 +36,9 @@ This project allows a user, acting as a server, to let other users download `.zi
 ```bash
 ├── src/
 │   ├── files/                # Folder where the .zip files to share are placed
-│   ├── index.html/     
-│   ├── index.css/
-│   └── script.js/
+│   ├── index.html     
+│   ├── index.css
+│   └── script.js
 ├── download-server.bat       # Run the server using nodejs
 ├── install-dependencies.bat  # Run to install the dependencies
 └── server.js                 # Express.js server scrip
